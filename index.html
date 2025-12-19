@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reparaciones de Electrodomésticos</title>
+  <!-- Vinculamos la hoja de estilos externa -->
+  <link rel="stylesheet" href="styles.css" />
+  <script src="pagina.js" defer></script>
+</head>
+<body>
+  <!-- Encabezado con barra de navegación -->
+  <header class="main-header">
+    <nav class="navbar">
+      <h1 class="logo">Reparaciones Exprés</h1>
+      <!-- Botón de contacto que llama a la función de JavaScript -->
+      <button class="contact-button" onclick="mostrarCorreo()">Contacto</button>
+    </nav>
+  </header>
+
+  <!-- Sección de presentación o “banner” -->
+  <section class="banner">
+    <div class="banner-text">
+      <h2>¿Necesitas reparar tu electrodoméstico?</h2>
+      <p>Brindamos servicio a domicilio y garantía en cada reparación.</p>
+    </div>
+  </section>
+
+  <!-- Sección de información de servicios -->
+  <section class="services">
+    <h2>Servicios que ofrecemos</h2>
+    <ul>
+      <li>Reparación de lavadoras</li>
+      <li>Reparación de neveras y congeladores</li>
+      <li>Servicio a microondas y hornos eléctricos</li>
+      <li>Mantenimiento de lavavajillas</li>
+      <li>Servicio de instalación de nuevos equipos</li>
+    </ul>
+    <p>
+      Contamos con técnicos especializados y repuestos de la más alta calidad.
+    </p>
+  </section>
+
+  <!-- Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <p>Para contactarnos, escribe a: rimialvi@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="main-footer">
+    <p>© 2024 Reparaciones Exprés - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Vinculamos el archivo JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>
