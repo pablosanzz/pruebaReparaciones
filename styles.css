@@ -123,3 +123,29 @@ footer {
     transform: rotate(4deg);
 }
 
+/* Cuando la pantalla sea menor a 768px (móviles y tablets) */
+@media (max-width: 768px) {
+    .contenedor-galeria {
+        height: auto; /* Que el contenedor crezca según las fotos */
+        display: flex;
+        flex-direction: column; /* Apilamos las fotos una debajo de otra */
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 50px;
+    }
+
+    .foto-irregular {
+        position: relative !important; /* Anulamos el absolute para que no se solapen */
+        width: 80% !important; /* Que ocupen casi todo el ancho del móvil */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: rotate(0deg) !important; /* Quitamos la rotación para que se vean claras */
+        margin: 10px 0;
+    }
+    
+    header {
+        font-size: 16pt; /* Reducimos el tamaño del título en móvil */
+    }
+}
+
