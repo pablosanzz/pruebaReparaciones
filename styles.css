@@ -145,7 +145,8 @@ footer {
     }
     
     header {
-        font-size: 16pt; /* Reducimos el tamaño del título en móvil */
+        font-size: 5pt; /* Reducimos el tamaño del título en móvil */
     }
 }
+
 
