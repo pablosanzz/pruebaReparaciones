@@ -1,152 +1,176 @@
-/* IMPORTANTE: Resetear márgenes por defecto del navegador */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    /* IMPORTANTE: Resetear márgenes por defecto del navegador */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    font-size: 10pt;
-    color: black;
-    background-image: url('background2.jpg');
-    background-size: cover; /* para que la imagen cubra todo el fondo */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* imagen no se mueve si desplazo el contenido */
-    padding-top: 70px; /* para que la barra superior no tape el contenido */
-}
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+        color: black;
+        background-image: url('background2.jpg');
+        background-size: cover; /* para que la imagen cubra todo el fondo */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* imagen no se mueve si desplazo el contenido */
+        padding-top: 70px; /* para que la barra superior no tape el contenido */
+    }
 
-/* ----- BARRA SUPERIOR ----- */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;      /* Asegura que pegue al borde izquierdo */
-    right: 0;     /* Asegura que pegue al borde derecho */
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Negro con un toque de transparencia */
-    color: rgba(255, 255, 255, 0.9); /* Texto blanco para que se vea sobre el fondo negro */
-    padding: 15px 0;
-    text-align: center;
-    font-size: 8pt;
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    z-index: 1000; /* Para que esté por encima de otros elementos */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra suave para dar profundidad */
-}   
+    /* ----- BARRA SUPERIOR ----- */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;      /* Asegura que pegue al borde izquierdo */
+        right: 0;     /* Asegura que pegue al borde derecho */
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Negro con un toque de transparencia */
+        color: rgba(255, 255, 255, 0.9); /* Texto blanco para que se vea sobre el fondo negro */
+        padding: 15px 0;
 
-#instagram_icon {
-    width: 30px;
-    height: 30px;
-    position: fixed;
-    right: 30px;
-    top:  12px
-}
 
-#instagram_icon:hover {
-    transform: scale(1.1);
-}
-
-/* ----- PIE DE PÁGINA ----- */
-footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    text-align: center;
-    font-size: 8pt;
-}
-
-/* ----- FOTOS ------ */
-.contenedor-galeria {
-    position: relative;
-    width: 100%;
-    height: 1400px; /* Dale altura suficiente para repartir las fotos */
-    margin-top: 50px;
-}
-
-.foto-irregular {
-    position: absolute; /* Permite moverlas con top, bottom, left, right */
-    height: auto;
-    transition: transform 0.3s; /* Para que al pasar el ratón se muevan suave */
-}
-
-#foto6 { /*NIEVE ZAKOPANE*/
-    width: 30%;
-    top: 50px;
-    left: 10%;
-    z-index: 2; /* Para que esta quede por encima de otras si se cruzan */
-    transform: rotate(10deg);
-}
-
-#foto2 { /*SOMBRAS O CASTRO*/
-    width: 30%;
-    top: 35px;
-    right: 10%;
-    z-index: 0;
-    transform: rotate(-10deg);
-}
-
-#foto3 { /*GDANSK */
-    width: 25%;
-    top: 300px;
-    left: 35%;
-    z-index: 1;
-    transform: rotate(-8deg);
-}
-
-#foto4 { /*FARO FISTERRA*/
-    width: 25%;
-    top: 500px;
-    left: 10%;
-    z-index: 2;
-    transform: rotate(5deg);
-    z-index: 0;
-}
-
-#foto5 { /*MONTE PIENYNY*/
-    width: 25%;
-    top: 450px;
-    right: 10%;
-    z-index: 1;
-    transform: rotate(8deg);
-}
-
-#foto1 { /*SAMIL SUNSET*/
-    width: 30%;
-    top: 850px;
-    left: 35%;
-    z-index: 1;
-    transform: rotate(4deg);
-}
-
-/* Cuando la pantalla sea menor a 768px (móviles y tablets) */
-@media (max-width: 768px) {
-    .contenedor-galeria {
-        height: auto; /* Que el contenedor crezca según las fotos */
+        /* MAGIA PARA CENTRAR */
         display: flex;
-        flex-direction: column; /* Apilamos las fotos una debajo de otra */
-        align-items: center;
-        gap: 20px;
-        padding-bottom: 50px;
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center;     /* Centra el contenido verticalmente */
+        gap: 15px;               /* Espacio entre el texto y el icono */
+
+
+        font-size: 8pt;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        z-index: 1000; /* Para que esté por encima de otros elementos */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra suave para dar profundidad */
+    }   
+
+    h2 {
+        display: none;
+    }
+
+    #instagram_icon {
+        width: 30px;
+        height: 30px;
+        position: static;
+        display: block;
+        transition: transform 0.3s;
+    }
+
+    #instagram_icon:hover {
+        transform: scale(1.1);
+    }
+
+    /* ----- PIE DE PÁGINA ----- */
+    footer {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        text-align: center;
+        font-size: 8pt;
+    }
+
+    /* ----- FOTOS ------ */
+    .contenedor-galeria {
+        position: relative;
+        width: 100%;
+        height: 1400px; /* Dale altura suficiente para repartir las fotos */
+        margin-top: 50px;
     }
 
     .foto-irregular {
-        position: relative !important; /* Anulamos el absolute para que no se solapen */
-        width: 80% !important; /* Que ocupen casi todo el ancho del móvil */
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        transform: rotate(0deg) !important; /* Quitamos la rotación para que se vean claras */
-        margin: 10px 0;
+        position: absolute; /* Permite moverlas con top, bottom, left, right */
+        height: auto;
+        transition: transform 0.3s; /* Para que al pasar el ratón se muevan suave */
     }
-    
-    header {
-        font-size: 5pt; /* Reducimos el tamaño del título en móvil */
+
+    #foto6 { /*NIEVE ZAKOPANE*/
+        width: 30%;
+        top: 50px;
+        left: 10%;
+        z-index: 2; /* Para que esta quede por encima de otras si se cruzan */
+        transform: rotate(10deg);
     }
-}
 
+    #foto2 { /*SOMBRAS O CASTRO*/
+        width: 30%;
+        top: 35px;
+        right: 10%;
+        z-index: 0;
+        transform: rotate(-10deg);
+    }
 
+    #foto3 { /*GDANSK */
+        width: 25%;
+        top: 300px;
+        left: 35%;
+        z-index: 1;
+        transform: rotate(-8deg);
+    }
+
+    #foto4 { /*FARO FISTERRA*/
+        width: 25%;
+        top: 500px;
+        left: 10%;
+        z-index: 2;
+        transform: rotate(5deg);
+        z-index: 0;
+    }
+
+    #foto5 { /*MONTE PIENYNY*/
+        width: 25%;
+        top: 450px;
+        right: 10%;
+        z-index: 1;
+        transform: rotate(8deg);
+    }
+
+    #foto1 { /*SAMIL SUNSET*/
+        width: 30%;
+        top: 850px;
+        left: 35%;
+        z-index: 1;
+        transform: rotate(4deg);
+    }
+
+    /* Cuando la pantalla sea menor a 768px (móviles y tablets) */
+    @media (max-width: 768px) {
+            .contenedor-galeria {
+            display: flex;          /* Activa el modo flexible */
+            flex-direction: column; /* Coloca las fotos en vertical */
+            align-items: center;    /* CENTRA las fotos horizontalmente */
+            justify-content: flex-start;
+            height: auto;           /* Permite que el contenedor crezca hacia abajo */
+            margin-top: 20px;
+            gap: 30px;              /* Espacio uniforme entre foto y foto */
+            padding: 0 10px;        /* Evita que las fotos toquen los bordes del móvil */
+        }
+
+        .foto-irregular {
+            /* IMPORTANTE: Anulamos el estilo de escritorio */
+            position: relative !important; 
+            width: 90% !important;  /* Ajusta este % para que se vean más grandes o pequeñas */
+            max-width: 400px;       /* Evita que en tablets se vean gigantes */
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+            margin: 0 auto !important; /* Refuerzo de centrado */
+            border-radius: 10px;      /* Bordes redondeados para mejor estética */
+            border: 5px solid grey;
+            transform: rotate(0deg) !important; /* Anula la rotación */
+            
+            /* Opcional: reducimos la rotación para que se lea mejor en móvil */
+            transform: rotate(2deg) !important; 
+        }
+        
+        header {
+            padding: 8px 0;
+        }
+
+        #instagram_icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
